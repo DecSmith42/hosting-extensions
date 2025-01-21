@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecSm.Extensions.Hosting", "DecSm.Extensions.Hosting\DecSm.Extensions.Hosting.csproj", "{4EB39943-975B-4D13-AEC9-6BADDE10246D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_atom", "_atom\_atom.csproj", "{95BFC956-6DC7-4DDA-89DE-78A6A312F8E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecSm.Extensions.Hosting.Tests", "DecSm.Extensions.Hosting.Tests\DecSm.Extensions.Hosting.Tests.csproj", "{2A7AAF3C-9B27-4602-8478-50DFFC5284B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EB39943-975B-4D13-AEC9-6BADDE10246D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB39943-975B-4D13-AEC9-6BADDE10246D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB39943-975B-4D13-AEC9-6BADDE10246D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB39943-975B-4D13-AEC9-6BADDE10246D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95BFC956-6DC7-4DDA-89DE-78A6A312F8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95BFC956-6DC7-4DDA-89DE-78A6A312F8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95BFC956-6DC7-4DDA-89DE-78A6A312F8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95BFC956-6DC7-4DDA-89DE-78A6A312F8E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7AAF3C-9B27-4602-8478-50DFFC5284B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7AAF3C-9B27-4602-8478-50DFFC5284B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7AAF3C-9B27-4602-8478-50DFFC5284B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7AAF3C-9B27-4602-8478-50DFFC5284B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
