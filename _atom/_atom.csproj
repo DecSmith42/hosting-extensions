@@ -21,10 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DecSm.Atom" Version="1.0.0-rc.371" />
-    <PackageReference Include="DecSm.Atom.Module.Dotnet" Version="1.0.0-rc.371" />
-    <PackageReference Include="DecSm.Atom.Module.GithubWorkflows" Version="1.0.0-rc.371" />
-    <PackageReference Include="DecSm.Atom.Module.GitVersion" Version="1.0.0-rc.371" />
+    <PackageReference Include="DecSm.Atom" Version="1.0.0-rc.378" />
+    <PackageReference Include="DecSm.Atom.Module.Dotnet" Version="1.0.0-rc.378" />
+    <PackageReference Include="DecSm.Atom.Module.GithubWorkflows" Version="1.0.0-rc.378" />
+    <PackageReference Include="DecSm.Atom.Module.GitVersion" Version="1.0.0-rc.378" />
   </ItemGroup>
 
 </Project>
