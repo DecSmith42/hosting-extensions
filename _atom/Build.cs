@@ -1,6 +1,4 @@
-﻿using Atom.Targets;
-
-namespace Atom;
+﻿namespace Atom;
 
 [BuildDefinition]
 [GenerateEntryPoint]
@@ -29,7 +27,7 @@ internal sealed partial class Build : DefaultBuildDefinition,
         },
         new("Build")
         {
-            Triggers = [GitPushTrigger.ToMain, ManualTrigger.Empty],
+            Triggers = [GitPushTrigger.ToMain, GithubReleaseTrigger.OnReleased, ManualTrigger.Empty],
             StepDefinitions =
             [
                 Commands.SetupBuildInfo,
