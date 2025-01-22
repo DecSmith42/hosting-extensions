@@ -7,10 +7,13 @@ internal sealed partial class Build : DefaultBuildDefinition,
     IGithubWorkflows,
     IPackHostingExtensions,
     ITestHostingExtensions,
-    IPushToNuget
+    IPushToNuget,
+    IPushToRelease
 {
-    public override IReadOnlyList<IWorkflowOption>
-        DefaultWorkflowOptions => [UseGitVersionForBuildId.Enabled, new SetupDotnetStep("9.0.x")];
+    public override IReadOnlyList<IWorkflowOption> DefaultWorkflowOptions =>
+    [
+        UseGitVersionForBuildId.Enabled, new SetupDotnetStep("9.0.x"),
+    ];
 
     public override IReadOnlyList<WorkflowDefinition> Workflows =>
     [
@@ -34,6 +37,7 @@ internal sealed partial class Build : DefaultBuildDefinition,
                 Commands.PackHostingExtensions,
                 Commands.TestHostingExtensions,
                 Commands.PushToNuget.WithAddedOptions(WorkflowSecretInjection.Create(Params.NugetApiKey)),
+                Commands.PushToRelease.WithGithubTokenInjection(),
             ],
             WorkflowTypes = [Github.WorkflowType],
         },
