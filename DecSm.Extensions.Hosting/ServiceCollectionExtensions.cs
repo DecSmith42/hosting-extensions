@@ -18,7 +18,10 @@ public static class ServiceCollectionExtensions
     /// <remarks>All service registrations will share the same instance of the implementation type.</remarks>
     /// <seealso cref="ServiceLifetime.Singleton" />
     public static IServiceCollection AddSingleton<TService1, TService2,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection services)
         where TService1 : class
         where TService2 : class
         where TImplementation : class, TService1, TService2 =>
@@ -41,7 +44,10 @@ public static class ServiceCollectionExtensions
     /// <remarks>All service registrations will share the same instance of the implementation type.</remarks>
     /// <seealso cref="ServiceLifetime.Singleton" />
     public static IServiceCollection AddSingleton<TService1, TService2, TService3,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection services)
         where TService1 : class
         where TService2 : class
         where TService3 : class
@@ -67,7 +73,10 @@ public static class ServiceCollectionExtensions
     /// <remarks>All service registrations will share the same instance of the implementation type.</remarks>
     /// <seealso cref="ServiceLifetime.Singleton" />
     public static IServiceCollection AddSingleton<TService1, TService2, TService3, TService4,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection services)
         where TService1 : class
         where TService2 : class
         where TService3 : class
@@ -96,7 +105,10 @@ public static class ServiceCollectionExtensions
     /// <remarks>All service registrations will share the same instance of the implementation type.</remarks>
     /// <seealso cref="ServiceLifetime.Singleton" />
     public static IServiceCollection AddSingleton<TService1, TService2, TService3, TService4, TService5,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection services)
         where TService1 : class
         where TService2 : class
         where TService3 : class
@@ -123,7 +135,10 @@ public static class ServiceCollectionExtensions
     /// <remarks>All service registrations will share the same instance of the implementation type within a scope.</remarks>
     /// <seealso cref="ServiceLifetime.Scoped" />
     public static IServiceCollection AddScoped<TService1, TService2,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection services)
         where TService1 : class
         where TService2 : class
         where TImplementation : class, TService1, TService2 =>
@@ -146,7 +161,10 @@ public static class ServiceCollectionExtensions
     /// <remarks>All service registrations will share the same instance of the implementation type within a scope.</remarks>
     /// <seealso cref="ServiceLifetime.Scoped" />
     public static IServiceCollection AddScoped<TService1, TService2, TService3,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection services)
         where TService1 : class
         where TService2 : class
         where TService3 : class
@@ -172,7 +190,10 @@ public static class ServiceCollectionExtensions
     /// <remarks>All service registrations will share the same instance of the implementation type within a scope.</remarks>
     /// <seealso cref="ServiceLifetime.Scoped" />
     public static IServiceCollection AddScoped<TService1, TService2, TService3, TService4,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection services)
         where TService1 : class
         where TService2 : class
         where TService3 : class
@@ -201,7 +222,10 @@ public static class ServiceCollectionExtensions
     /// <remarks>All service registrations will share the same instance of the implementation type within a scope.</remarks>
     /// <seealso cref="ServiceLifetime.Scoped" />
     public static IServiceCollection AddScoped<TService1, TService2, TService3, TService4, TService5,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(this IServiceCollection services)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection services)
         where TService1 : class
         where TService2 : class
         where TService3 : class
@@ -226,8 +250,10 @@ public static class ServiceCollectionExtensions
     /// <returns>A reference to this instance after the operation has completed.</returns>
     /// <remarks>The service is registered as a singleton and as a hosted service.</remarks>
     public static IServiceCollection AddHostedService<TService,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(
-        this IServiceCollection serviceCollection)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection serviceCollection)
         where TService : class
         where TImplementation : class, TService, IHostedService =>
         serviceCollection
@@ -246,8 +272,10 @@ public static class ServiceCollectionExtensions
     /// <returns>A reference to this instance after the operation has completed.</returns>
     /// <remarks>The service is registered as a singleton and as a hosted service.</remarks>
     public static IServiceCollection AddHostedService<TService1, TService2,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(
-        this IServiceCollection serviceCollection)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection serviceCollection)
         where TService1 : class
         where TService2 : class
         where TImplementation : class, TService1, TService2, IHostedService =>
@@ -270,8 +298,10 @@ public static class ServiceCollectionExtensions
     /// <returns>A reference to this instance after the operation has completed.</returns>
     /// <remarks>The service is registered as a singleton and as a hosted service.</remarks>
     public static IServiceCollection AddHostedService<TService1, TService2, TService3,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(
-        this IServiceCollection serviceCollection)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection serviceCollection)
         where TService1 : class
         where TService2 : class
         where TService3 : class
@@ -297,8 +327,10 @@ public static class ServiceCollectionExtensions
     /// <returns>A reference to this instance after the operation has completed.</returns>
     /// <remarks>The service is registered as a singleton and as a hosted service.</remarks>
     public static IServiceCollection AddHostedService<TService1, TService2, TService3, TService4,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(
-        this IServiceCollection serviceCollection)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection serviceCollection)
         where TService1 : class
         where TService2 : class
         where TService3 : class
@@ -327,8 +359,10 @@ public static class ServiceCollectionExtensions
     /// <returns>A reference to this instance after the operation has completed.</returns>
     /// <remarks>The service is registered as a singleton and as a hosted service.</remarks>
     public static IServiceCollection AddHostedService<TService1, TService2, TService3, TService4, TService5,
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TImplementation>(
-        this IServiceCollection serviceCollection)
+        #if NET8_0_OR_GREATER
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        TImplementation>(this IServiceCollection serviceCollection)
         where TService1 : class
         where TService2 : class
         where TService3 : class
