@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Roslynator.Analyzers" Version="4.12.10">
+    <PackageReference Include="Roslynator.Analyzers" Version="4.13.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Roslynator.Formatting.Analyzers" Version="4.12.10">
+    <PackageReference Include="Roslynator.Formatting.Analyzers" Version="4.13.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -21,10 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DecSm.Atom" Version="1.0.0-rc.378" />
-    <PackageReference Include="DecSm.Atom.Module.Dotnet" Version="1.0.0-rc.378" />
-    <PackageReference Include="DecSm.Atom.Module.GithubWorkflows" Version="1.0.0-rc.378" />
-    <PackageReference Include="DecSm.Atom.Module.GitVersion" Version="1.0.0-rc.378" />
+    <PackageReference Include="DecSm.Atom" Version="1.0.0-rc.390" />
+    <PackageReference Include="DecSm.Atom.Module.Dotnet" Version="1.0.0-rc.390" />
+    <PackageReference Include="DecSm.Atom.Module.GithubWorkflows" Version="1.0.0-rc.390" />
+    <PackageReference Include="DecSm.Atom.Module.GitVersion" Version="1.0.0-rc.390" />
   </ItemGroup>
 
 </Project>
