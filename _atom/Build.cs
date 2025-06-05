@@ -2,15 +2,9 @@
 
 [BuildDefinition]
 [GenerateEntryPoint]
-internal sealed partial class Build : DefaultBuildDefinition,
-    IGitVersion,
-    IGithubWorkflows,
-    IPackHostingExtensions,
-    ITestHostingExtensions,
-    IPushToNuget,
-    IPushToRelease
+internal sealed partial class Build : DefaultBuildDefinition, IGitVersion, IGithubWorkflows, ITargets
 {
-    public override IReadOnlyList<IWorkflowOption> DefaultWorkflowOptions =>
+    public override IReadOnlyList<IWorkflowOption> GlobalWorkflowOptions =>
     [
         UseGitVersionForBuildId.Enabled, new SetupDotnetStep("9.0.x"),
     ];
@@ -22,9 +16,7 @@ internal sealed partial class Build : DefaultBuildDefinition,
             Triggers = [GitPullRequestTrigger.IntoMain, ManualTrigger.Empty],
             StepDefinitions =
             [
-                Commands.SetupBuildInfo,
-                Commands.PackHostingExtensions.WithSuppressedArtifactPublishing,
-                Commands.TestHostingExtensions,
+                Targets.SetupBuildInfo, Targets.PackHostingExtensions.WithSuppressedArtifactPublishing, Targets.TestHostingExtensions,
             ],
             WorkflowTypes = [Github.WorkflowType],
         },
@@ -33,11 +25,11 @@ internal sealed partial class Build : DefaultBuildDefinition,
             Triggers = [GitPushTrigger.ToMain, GithubReleaseTrigger.OnReleased, ManualTrigger.Empty],
             StepDefinitions =
             [
-                Commands.SetupBuildInfo,
-                Commands.PackHostingExtensions,
-                Commands.TestHostingExtensions,
-                Commands.PushToNuget.WithAddedOptions(WorkflowSecretInjection.Create(Params.NugetApiKey)),
-                Commands.PushToRelease.WithGithubTokenInjection(),
+                Targets.SetupBuildInfo,
+                Targets.PackHostingExtensions,
+                Targets.TestHostingExtensions,
+                Targets.PushToNuget.WithOptions(WorkflowSecretInjection.Create(Params.NugetApiKey)),
+                Targets.PushToRelease.WithGithubTokenInjection(),
             ],
             WorkflowTypes = [Github.WorkflowType],
         },
