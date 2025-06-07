@@ -14,7 +14,7 @@ internal sealed partial class Build : DefaultBuildDefinition, IGitVersion, IGith
         new("Validate")
         {
             Triggers = [GitPullRequestTrigger.IntoMain, ManualTrigger.Empty],
-            StepDefinitions =
+            Targets =
             [
                 Targets.SetupBuildInfo, Targets.PackHostingExtensions.WithSuppressedArtifactPublishing, Targets.TestHostingExtensions,
             ],
@@ -23,7 +23,7 @@ internal sealed partial class Build : DefaultBuildDefinition, IGitVersion, IGith
         new("Build")
         {
             Triggers = [GitPushTrigger.ToMain, GithubReleaseTrigger.OnReleased, ManualTrigger.Empty],
-            StepDefinitions =
+            Targets =
             [
                 Targets.SetupBuildInfo,
                 Targets.PackHostingExtensions,
