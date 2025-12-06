@@ -3,8 +3,8 @@ namespace Atom;
 [PublicAPI]
 internal interface ITargets : IDotnetPackHelper, IDotnetTestHelper, INugetHelper, IGithubReleaseHelper, ISetupBuildInfo
 {
-    public const string HostingExtensionsProjectName = "DecSm.Extensions.Hosting";
-    public const string HostingExtensionsTestsProjectName = "DecSm.Extensions.Hosting.Tests";
+    const string HostingExtensionsProjectName = "DecSm.Extensions.Hosting";
+    const string HostingExtensionsTestsProjectName = "DecSm.Extensions.Hosting.Tests";
 
     [ParamDefinition("nuget-push-feed", "The Nuget feed to push to.", "https://api.nuget.org/v3/index.json")]
     string NugetFeed => GetParam(() => NugetFeed, "https://api.nuget.org/v3/index.json");
@@ -38,8 +38,10 @@ internal interface ITargets : IDotnetPackHelper, IDotnetTestHelper, INugetHelper
             .ConsumesArtifact(nameof(PackHostingExtensions), HostingExtensionsProjectName)
             .RequiresParam(nameof(NugetFeed))
             .RequiresParam(nameof(NugetApiKey))
-            .Executes(cancellationToken =>
-                PushProject(HostingExtensionsProjectName, NugetFeed, NugetApiKey, cancellationToken: cancellationToken));
+            .Executes(cancellationToken => PushProject(HostingExtensionsProjectName,
+                NugetFeed,
+                NugetApiKey,
+                cancellationToken: cancellationToken));
 
     Target PushToRelease =>
         d => d

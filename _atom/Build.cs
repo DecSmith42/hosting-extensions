@@ -16,7 +16,9 @@ internal sealed partial class Build : DefaultBuildDefinition, IGitVersion, IGith
             Triggers = [GitPullRequestTrigger.IntoMain, ManualTrigger.Empty],
             Targets =
             [
-                Targets.SetupBuildInfo, Targets.PackHostingExtensions.WithSuppressedArtifactPublishing, Targets.TestHostingExtensions,
+                Targets.SetupBuildInfo,
+                Targets.PackHostingExtensions.WithSuppressedArtifactPublishing,
+                Targets.TestHostingExtensions,
             ],
             WorkflowTypes = [Github.WorkflowType],
         },

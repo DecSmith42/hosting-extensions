@@ -7,8 +7,10 @@
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    ///     Adds a singleton service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     Adds a singleton service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -27,13 +29,17 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2 =>
         services
             .AddSingleton<TImplementation>()
-            .AddSingleton<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
+            .AddSingleton<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a singleton service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />,
+    ///     Adds a singleton service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />,
     ///     <typeparamref name="TService3" />
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -54,14 +60,19 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, TService3 =>
         services
             .AddSingleton<TImplementation>()
-            .AddSingleton<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService3, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
+            .AddSingleton<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService3, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a singleton service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />,
+    ///     Adds a singleton service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />,
     ///     <typeparamref name="TService3" />, <typeparamref name="TService4" />
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -84,15 +95,21 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, TService3, TService4 =>
         services
             .AddSingleton<TImplementation>()
-            .AddSingleton<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService3, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService4, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
+            .AddSingleton<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService3, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService4, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a singleton service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />,
+    ///     Adds a singleton service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />,
     ///     <typeparamref name="TService3" />, <typeparamref name="TService4" />, <typeparamref name="TService5" />
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -117,15 +134,22 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, TService3, TService4, TService5 =>
         services
             .AddSingleton<TImplementation>()
-            .AddSingleton<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService3, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService4, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService5, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
+            .AddSingleton<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService3, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService4, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService5, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a scoped service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     Adds a scoped service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -144,13 +168,17 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2 =>
         services
             .AddScoped<TImplementation>()
-            .AddScoped<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
+            .AddScoped<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a scoped service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />,
+    ///     Adds a scoped service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />,
     ///     <typeparamref name="TService3" />
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -171,14 +199,19 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, TService3 =>
         services
             .AddScoped<TImplementation>()
-            .AddScoped<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService3, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
+            .AddScoped<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService3, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a scoped service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />,
+    ///     Adds a scoped service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />,
     ///     <typeparamref name="TService3" />, <typeparamref name="TService4" />
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -201,15 +234,21 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, TService3, TService4 =>
         services
             .AddScoped<TImplementation>()
-            .AddScoped<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService3, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService4, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
+            .AddScoped<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService3, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService4, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a scoped service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />,
+    ///     Adds a scoped service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />,
     ///     <typeparamref name="TService3" />, <typeparamref name="TService4" />, <typeparamref name="TService5" />
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -234,15 +273,21 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, TService3, TService4, TService5 =>
         services
             .AddScoped<TImplementation>()
-            .AddScoped<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService3, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService4, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddScoped<TService5, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
+            .AddScoped<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService3, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService4, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddScoped<TService5, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
     ///     Adds a hosted service of the types specified in <typeparamref name="TService" />, with an
-    ///     implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService">The type of the service to add.</typeparam>
     /// <typeparam name="TImplementation">The type of the implementation to use.</typeparam>
@@ -262,8 +307,10 @@ public static class ServiceCollectionExtensions
             .AddHostedService(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a hosted service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />, with an
-    ///     implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     Adds a hosted service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />, with an
+    ///     implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -281,14 +328,18 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, IHostedService =>
         serviceCollection
             .AddSingleton<TImplementation>()
-            .AddSingleton<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
             .AddHostedService(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a hosted service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />,
+    ///     Adds a hosted service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />,
     ///     <typeparamref name="TService3" />,
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -308,15 +359,20 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, TService3, IHostedService =>
         serviceCollection
             .AddSingleton<TImplementation>()
-            .AddSingleton<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService3, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService3, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
             .AddHostedService(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a hosted service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />,
+    ///     Adds a hosted service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />,
     ///     <typeparamref name="TService3" />, <typeparamref name="TService4" />,
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -338,16 +394,22 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, TService3, TService4, IHostedService =>
         serviceCollection
             .AddSingleton<TImplementation>()
-            .AddSingleton<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService3, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService4, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService3, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService4, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
             .AddHostedService(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
 
     /// <summary>
-    ///     Adds a hosted service of the types specified in <typeparamref name="TService1" />, <typeparamref name="TService2" />,
+    ///     Adds a hosted service of the types specified in <typeparamref name="TService1" />,
+    ///     <typeparamref name="TService2" />,
     ///     <typeparamref name="TService3" />, <typeparamref name="TService4" />, <typeparamref name="TService5" />,
-    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified <see cref="IServiceCollection" />.
+    ///     with an implementation type specified in <typeparamref name="TImplementation" /> to the specified
+    ///     <see cref="IServiceCollection" />.
     /// </summary>
     /// <typeparam name="TService1">The first type of the service to add.</typeparam>
     /// <typeparam name="TService2">The second type of the service to add.</typeparam>
@@ -371,10 +433,15 @@ public static class ServiceCollectionExtensions
         where TImplementation : class, TService1, TService2, TService3, TService4, TService5, IHostedService =>
         serviceCollection
             .AddSingleton<TImplementation>()
-            .AddSingleton<TService1, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService2, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService3, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService4, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
-            .AddSingleton<TService5, TImplementation>(serviceProvider => serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService1, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService2, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService3, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService4, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
+            .AddSingleton<TService5, TImplementation>(serviceProvider =>
+                serviceProvider.GetRequiredService<TImplementation>())
             .AddHostedService(serviceProvider => serviceProvider.GetRequiredService<TImplementation>());
 }

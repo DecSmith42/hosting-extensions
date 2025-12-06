@@ -115,7 +115,8 @@ public class ServiceCollectionExtensionsTests
         IServiceCollection services = new ServiceCollection();
 
         // Act
-        services = services.AddSingleton<IInterface1, IInterface2, IInterface3, IInterface4, IInterface5, Implementation>();
+        services = services
+            .AddSingleton<IInterface1, IInterface2, IInterface3, IInterface4, IInterface5, Implementation>();
 
         // Assert
         var serviceProvider = services.BuildServiceProvider();
@@ -206,7 +207,8 @@ public class ServiceCollectionExtensionsTests
         IServiceCollection services = new ServiceCollection();
 
         // Act
-        services = services.AddScoped<IInterface1, IInterface2, IInterface3, IInterface4, IInterface5, Implementation>();
+        services = services
+            .AddScoped<IInterface1, IInterface2, IInterface3, IInterface4, IInterface5, Implementation>();
 
         // Assert
         var serviceProvider = services.BuildServiceProvider();
@@ -312,7 +314,8 @@ public class ServiceCollectionExtensionsTests
         IServiceCollection services = new ServiceCollection();
 
         // Act
-        services = services.AddHostedService<IInterface1, IInterface2, IInterface3, IInterface4, IInterface5, Implementation>();
+        services = services
+            .AddHostedService<IInterface1, IInterface2, IInterface3, IInterface4, IInterface5, Implementation>();
 
         // Assert
         var serviceProvider = services.BuildServiceProvider();
