@@ -4,7 +4,8 @@
 ///     Provides control over the host.
 /// </summary>
 /// <remarks>
-///     This can be added to the DI container and injected in place of <see cref="IHostApplicationLifetime" /> to provide additional control
+///     This can be added to the DI container and injected in place of <see cref="IHostApplicationLifetime" /> to provide
+///     additional control
 ///     over the host.
 /// </remarks>
 [PublicAPI]

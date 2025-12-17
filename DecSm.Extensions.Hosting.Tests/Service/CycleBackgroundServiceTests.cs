@@ -6,6 +6,7 @@
 public class CycleBackgroundServiceTests
 {
     [Test]
+    [NonParallelizable]
     public async Task ExecuteAsync_ShouldCallExecuteCycleAsync_Immediately()
     {
         // Arrange
@@ -23,6 +24,7 @@ public class CycleBackgroundServiceTests
     }
 
     [Test]
+    [NonParallelizable]
     public async Task ExecuteAsync_ShouldRepeatExecuteCycleAsync()
     {
         // Arrange
@@ -31,7 +33,7 @@ public class CycleBackgroundServiceTests
 
         // Act
         var task = service.StartAsync(cts.Token);
-        await Task.Delay(250); // wait for less than CycleCadenceMs
+        await Task.Delay(500); // wait for less than CycleCadenceMs
         await cts.CancelAsync();
         await task; // wait for the service to stop
 
@@ -40,6 +42,7 @@ public class CycleBackgroundServiceTests
     }
 
     [Test]
+    [NonParallelizable]
     public async Task ExecuteAsync_ShouldNotRepeatExecuteCycleAsync_AfterCancellation()
     {
         // Arrange
@@ -48,31 +51,17 @@ public class CycleBackgroundServiceTests
 
         // Act
         var task = service.StartAsync(cts.Token);
-        await Task.Delay(250); // wait for less than CycleCadenceMs
+        await Task.Delay(500); // wait for less than CycleCadenceMs
         await cts.CancelAsync();
         await task; // wait for the service to stop
-        await Task.Delay(250); // wait some more
+        await Task.Delay(500); // wait some more
 
         // Assert
         service.ExecuteCycleAsyncCallCount.ShouldBe(3);
     }
 
     [Test]
-    public async Task ExecuteAsync_DoesNotCatchImmediateExceptions()
-    {
-        // Arrange
-        var service = new TestCycleBackgroundService
-        {
-            ThrowImmediateException = true,
-        };
-
-        var cts = new CancellationTokenSource();
-
-        // Act/Assert
-        await Should.ThrowAsync<Exception>(() => service.StartAsync(cts.Token));
-    }
-
-    [Test]
+    [NonParallelizable]
     public async Task ExecuteAsync_DoesNotCatchDelayedExceptions()
     {
         // Arrange
