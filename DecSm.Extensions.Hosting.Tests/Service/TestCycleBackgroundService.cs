@@ -10,7 +10,7 @@ public class TestCycleBackgroundService : CycleBackgroundService
 
     public bool ThrowDelayedException { get; init; }
 
-    protected override int CycleCadenceMs => 100;
+    protected override int CycleCadenceMs => 200;
 
     protected override async Task ExecuteCycleAsync(CancellationToken stoppingToken)
     {

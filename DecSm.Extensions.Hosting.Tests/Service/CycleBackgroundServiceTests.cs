@@ -31,7 +31,7 @@ public class CycleBackgroundServiceTests
 
         // Act
         var task = service.StartAsync(cts.Token);
-        await Task.Delay(250); // wait for less than CycleCadenceMs
+        await Task.Delay(500); // wait for less than CycleCadenceMs
         await cts.CancelAsync();
         await task; // wait for the service to stop
 
@@ -48,10 +48,10 @@ public class CycleBackgroundServiceTests
 
         // Act
         var task = service.StartAsync(cts.Token);
-        await Task.Delay(250); // wait for less than CycleCadenceMs
+        await Task.Delay(500); // wait for less than CycleCadenceMs
         await cts.CancelAsync();
         await task; // wait for the service to stop
-        await Task.Delay(250); // wait some more
+        await Task.Delay(500); // wait some more
 
         // Assert
         service.ExecuteCycleAsyncCallCount.ShouldBe(3);
