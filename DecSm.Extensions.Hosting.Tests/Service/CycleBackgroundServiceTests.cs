@@ -6,6 +6,7 @@
 public class CycleBackgroundServiceTests
 {
     [Test]
+    [NonParallelizable]
     public async Task ExecuteAsync_ShouldCallExecuteCycleAsync_Immediately()
     {
         // Arrange
@@ -23,6 +24,7 @@ public class CycleBackgroundServiceTests
     }
 
     [Test]
+    [NonParallelizable]
     public async Task ExecuteAsync_ShouldRepeatExecuteCycleAsync()
     {
         // Arrange
@@ -40,6 +42,7 @@ public class CycleBackgroundServiceTests
     }
 
     [Test]
+    [NonParallelizable]
     public async Task ExecuteAsync_ShouldNotRepeatExecuteCycleAsync_AfterCancellation()
     {
         // Arrange
@@ -58,6 +61,7 @@ public class CycleBackgroundServiceTests
     }
 
     [Test]
+    [NonParallelizable]
     public async Task ExecuteAsync_DoesNotCatchDelayedExceptions()
     {
         // Arrange
