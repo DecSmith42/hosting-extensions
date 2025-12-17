@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="DecSm.Extensions.Hosting.Tests/DecSm.Extensions.Hosting.Tests.csproj" />
+  <Project Path="DecSm.Extensions.Hosting/DecSm.Extensions.Hosting.csproj" />
+  <Project Path="_atom/_atom.csproj" />
+</Solution>
