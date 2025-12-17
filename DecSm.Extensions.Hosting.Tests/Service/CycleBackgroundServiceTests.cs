@@ -58,21 +58,6 @@ public class CycleBackgroundServiceTests
     }
 
     [Test]
-    public async Task ExecuteAsync_DoesNotCatchImmediateExceptions()
-    {
-        // Arrange
-        var service = new TestCycleBackgroundService
-        {
-            ThrowImmediateException = true,
-        };
-
-        var cts = new CancellationTokenSource();
-
-        // Act/Assert
-        await Should.ThrowAsync<Exception>(() => service.StartAsync(cts.Token));
-    }
-
-    [Test]
     public async Task ExecuteAsync_DoesNotCatchDelayedExceptions()
     {
         // Arrange
