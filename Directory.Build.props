@@ -6,8 +6,6 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageDescription>A collection of extensions for the Microsoft.Extensions.Hosting namespace.</PackageDescription>
-    <EnablePackageValidation>true</EnablePackageValidation>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
 
     <LangVersion>14</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -20,7 +18,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     <DebugType>embedded</DebugType>
+    <Deterministic>true</Deterministic>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
